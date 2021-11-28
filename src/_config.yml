@@ -1,0 +1,6 @@
+title: Kaiteki
+baseurl: ""
+url: "https://craftplacer.moe/projects/kaiteki"
+
+sass:
+  style: compressed

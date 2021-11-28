@@ -1,0 +1,232 @@
+---
+---
+
+$body-font: 'Roboto', Arial, Helvetica, sans-serif;
+$heading-font: 'Quicksand', $body-font;
+$monospace-font: 'Roboto Mono', 'Lucide Console', 'Consolas', monospace;
+
+:root {
+    --disabled-text: rgba(255, 255, 255, 0.5);
+}
+
+html {
+    font-family: $body-font;
+    background: #1e2133;
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: $heading-font;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #FF7890;
+    
+    &:hover, &:active {
+        text-decoration: underline;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8pt 6pt;
+    border: 1px solid var(--disabled-text);
+}
+
+@mixin support($color, $codepoint, $dark) {
+    @if $dark {
+        color: lighten($color, 10%);
+    } @else {
+        color: darken($color, 10%);
+    }
+
+    background-color: transparentize($color: $color, $amount: 0.85);
+    font-weight: 400;
+
+    &:before { 
+        font-family: "Material Design Icons";
+        content: $codepoint;
+        margin-right: 4pt;
+    }
+}
+
+.support {
+
+    .y {
+        @include support(#B9F6CA, "\F0E1E", true);
+    }
+    
+    .n {
+        @include support(#FF8A80, "\F1398", true);
+    }
+    
+    .i {
+        @include support(#EA80FC, "\F0855", true);
+    }
+    
+    .p {
+        @include support(#FFD180, "\F01D8", true);
+    }
+    
+    a {
+        color: lighten(#FF7890, 10%);
+    }
+}
+
+nav {
+
+    background: darken(#1e2133, 3.5);
+    text-align: right;
+
+    ul {
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        display: inline-flex;
+        padding: 12px 24px;
+    }
+
+    li {
+        display: block;
+
+        a {
+            color: var(--disabled-text);
+            margin: 8pt;
+            padding: 8pt 0;
+        }
+    }
+}
+
+.navigation-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+	body {
+        background: #f7f9ff;
+        color: black;
+    }
+    nav {
+        background: darken(#f7f9ff, 3.5);
+    }
+
+    :root {
+        --disabled-text: rgba(0, 0, 0, 0.5);
+    }
+
+    a {
+        color: #9a3052;
+    }
+
+    .support {
+        .y {
+            @include support(#00C853, "\F0E1E", false);
+        }
+        
+        .n {
+            @include support(#D50000, "\F1398", false);
+        }
+
+        .p {
+            @include support(#FF6D00, "\F01D8", false);
+        }
+
+        .i {
+            @include support(#AA00FF, "\F0855", false);
+        }
+
+        a {
+            color: darken(#FF7890, 10%);
+        }
+    }
+}
+
+.centered {
+    max-width: 800px;
+    margin: 6pt auto;
+    padding: 12pt;
+}
+
+.alpha-badge {
+    // colors
+    background: #FF7890;
+    color: black;
+    
+    // text appearance
+    font-weight: bold;
+    font-size: 80%;
+    text-transform: uppercase;
+
+    border-radius: 24px;
+    padding: 0 12px;
+    
+    // align properly
+    position: relative;
+    top: -2pt;
+}
+
+@media (min-width: 576px) {
+    .columns {
+        // grid-auto-columns: minmax(0, 1fr);
+        grid-auto-flow: column;
+        display: grid;
+    }
+    
+    .navigation-container {
+        text-align: right;
+    }
+
+    .columns-center {
+        @extend .columns;
+        text-align: center;
+    }
+
+    .home-img {
+        width: 300px;
+    }
+
+    .image-container {
+        margin-left: 24px;
+    }
+}
+
+.primary-section {
+    // height: 100vh;
+    text-align: center;
+}
+
+.download-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--disabled-text);
+    font-size: 90%;
+}
+
+footer {
+    @extend .centered;
+    text-align: center;
+    font-family: $monospace-font;
+}
+
+.home-support-img {
+    top: 2pt;
+    position: relative;
+}
+
+.home-img {
+    border-radius: 6px;
+    box-shadow:rgba(0, 0, 0, 0.25) 0px 3px 8px;
+    width: 100%;
+}
