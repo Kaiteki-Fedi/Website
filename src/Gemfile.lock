@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
@@ -67,7 +68,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  jekyll (~> 4.2.0)
+  jekyll (~> 4.2.1)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
