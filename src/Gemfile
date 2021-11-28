@@ -1,6 +1,6 @@
-gsource "https://rubygems.org"
+source "https://rubygems.org"
 
-em "jekyll", "~> 4.2.1"
+gem "jekyll", "~> 4.2.1"
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", "~> 1.2"
