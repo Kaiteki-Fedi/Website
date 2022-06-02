@@ -3,6 +3,6 @@ baseurl: ""
 url: "https://craftplacer.moe/projects/kaiteki"
 # paginate: 10
 permalink: /posts/:categories/:year/:month/:day/:title/
-plugins: [jekyll-paginate, jekyll-feed]
+plugins: [jekyll-feed]
 sass:
   style: compressed
