@@ -5,7 +5,7 @@ gem "jekyll", "~> 4.2.1"
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", "~> 1.2"
   gem "tzinfo-data"
-  gem "jekyll-paginate"
+  # gem "jekyll-paginate"
   gem "jekyll-feed"
 end
 
