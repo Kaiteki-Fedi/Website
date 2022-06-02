@@ -1,0 +1,19 @@
+---
+title: Posts
+layout: default
+---
+
+<div class="post-list">
+{% for post in site.posts %}
+<div class="post">
+    <img class="cover" src="{{site.url}}/img/default-post-header.png">
+    <div>
+        <a href="{{ post.url }}"><h2>{{post.title}}</h2></a>
+        <p class="post-meta secondary-text">{% include post-meta.html %}</p>
+        <p>{{ post.excerpt | strip_html }}</p>
+    </div>
+</div>
+
+{% endfor %}
+
+</div>

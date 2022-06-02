@@ -4,15 +4,34 @@
 $body-font: 'Roboto', Arial, Helvetica, sans-serif;
 $heading-font: 'Quicksand', $body-font;
 $monospace-font: 'Roboto Mono', 'Lucide Console', 'Consolas', monospace;
+$rounding: 8px;
+$page-width: 800px;
+$page-margin: 24px;
+$navigation-link-spacing: 1em;
+$page-breakpoint: $page-width + ($page-margin * 2);
 
 :root {
     --disabled-text: rgba(255, 255, 255, 0.5);
+}
+
+#kaiteki-logo {
+    font-family: 'Quicksand', 'Roboto', 'Arial', sans-serif;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    img {
+        width: 32px;
+        height: 32px;
+        margin-right: 4px;
+    }
 }
 
 html {
     font-family: $body-font;
     background: #1e2133;
     color: white;
+    overflow-y: scroll;
 }
 
 body {
@@ -43,20 +62,121 @@ th, td {
     border: 1px solid var(--disabled-text);
 }
 
+
+hr {
+    border-bottom: none;
+}
+ol li {    
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+figcaption {
+    color: var(--disabled-text);
+    font-size: 85%;
+    text-align: center;
+}
+
 @mixin support($color, $codepoint, $dark) {
-    @if $dark {
-        color: lighten($color, 10%);
-    } @else {
-        color: darken($color, 10%);
+    @if $color {
+        @if $dark {
+            color: lighten($color, 10%);
+        
+            a {
+                color: lighten($color, 20%);
+                font-style: italic;
+            }
+        } @else {
+            color: darken($color, 10%);
+            
+            a {
+                color: darken($color, 20%);
+                font-style: italic;
+            }
+        }
+
+        a { text-decoration: underline; }
+
+        background-color: transparentize($color: $color, $amount: 0.85);
     }
 
-    background-color: transparentize($color: $color, $amount: 0.85);
     font-weight: 400;
+
 
     &:before { 
         font-family: "Material Design Icons";
         content: $codepoint;
         margin-right: 4pt;
+    }
+    
+    @media (max-width: 700px) {
+        font-size: 0;
+        &:before {
+            font-size: 1.5rem;
+        }     
+    }
+}
+
+@media (max-width: 700px) {
+    .th-dv {
+        // transform: rotate(90deg);
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .post-list .post {
+        flex-direction: column;
+        .cover {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+    }
+    #kaiteki-logo {
+        margin-bottom: 8px;
+    }
+    .navigation-container {
+        display: flex;
+        flex-direction: column;
+    }
+    nav ul {
+        display: flex;
+        a { margin-right: $navigation-link-spacing; }
+    }
+}
+
+@media (min-width: 701px) {
+    .post-list .post .cover {
+        margin-right: 12px;
+        width: 200px;
+        height: 150px;
+    }
+
+    .two-columns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .three-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    nav ul {
+        display: inline-flex;
+        margin-left: auto;
+
+        a { margin-left: $navigation-link-spacing; padding: 8px 0; }
+    }
+}
+
+@media screen and (max-width: ($page-breakpoint + 1)) {
+    .navigation-container {
+        margin: 0 $page-margin;
+    }
+}
+@media screen and (min-width: $page-breakpoint) {
+    .navigation-container {
+        margin: 0 auto;
     }
 }
 
@@ -84,16 +204,14 @@ th, td {
 }
 
 nav {
-
+    padding: 8px 0;
     background: darken(#1e2133, 3.5);
-    text-align: right;
 
     ul {
         padding-inline-start: 0;
         margin-block-start: 0;
         margin-block-end: 0;
-        display: inline-flex;
-        padding: 12px 24px;
+        padding: 12px 0;
     }
 
     li {
@@ -101,16 +219,77 @@ nav {
 
         a {
             color: var(--disabled-text);
-            margin: 8pt;
-            padding: 8pt 0;
+            padding: 12px 0;
         }
     }
 }
 
+.post-meta {
+    @extend .secondary-text;
+
+    .author-image {
+        vertical-align: middle;
+        position: relative;
+        top: -0.05em;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+    }
+}
+
+section:target {
+  animation-name: targetHint;
+  animation-duration: 3s;
+  background-color: transparentize(darken(#f7f9ff, 3.5), 0.5);
+  border-radius: $rounding;
+}
+
+
+article {
+    video {
+        width: 100%;
+        border-radius: $rounding;
+    }
+    li { margin: 1em 0px; }
+}
+
+.secondary-text {
+    color: var(--disabled-text);
+}
+
+.post-list {
+    .post {
+        margin: 24px 0;
+        display: flex;
+        .cover {
+            border-radius: $rounding;
+            object-fit: cover;
+            background-color: #dee0f8;
+        }
+        h2 {
+            margin-top: 0;
+        }
+    }
+}
+
+@keyframes targetHint {
+  0%   {background-color: darken(#f7f9ff, 3.5);}
+  75%  {background-color: transparentize(darken(#f7f9ff, 3.5), 0.5); }
+}
+
 .navigation-container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: $page-width;
     text-align: center;
+    display: flex;
+}
+
+#featured-screenshot {
+    max-height: 400px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow:rgba(0, 0, 0, 0.25) 0px 3px 8px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -120,6 +299,10 @@ nav {
     }
     nav {
         background: darken(#f7f9ff, 3.5);
+    }
+
+    #kaiteki-logo {
+        color: black;
     }
 
     :root {
@@ -154,9 +337,9 @@ nav {
 }
 
 .centered {
-    max-width: 800px;
-    margin: 6pt auto;
-    padding: 12pt;
+    max-width: $page-width;
+    margin: 12px auto;
+    padding: $page-margin;
 }
 
 .alpha-badge {
@@ -177,24 +360,16 @@ nav {
     top: -2pt;
 }
 
-@media (min-width: 576px) {
+@media screen and (min-width: 576px) {
     .columns {
         // grid-auto-columns: minmax(0, 1fr);
         grid-auto-flow: column;
         display: grid;
     }
-    
-    .navigation-container {
-        text-align: right;
-    }
 
     .columns-center {
         @extend .columns;
         text-align: center;
-    }
-
-    .home-img {
-        width: 300px;
     }
 
     .image-container {
@@ -216,17 +391,13 @@ nav {
 
 footer {
     @extend .centered;
-    text-align: center;
     font-family: $monospace-font;
+    .right {
+        float:right;
+    }
 }
 
 .home-support-img {
     top: 2pt;
     position: relative;
-}
-
-.home-img {
-    border-radius: 6px;
-    box-shadow:rgba(0, 0, 0, 0.25) 0px 3px 8px;
-    width: 100%;
 }

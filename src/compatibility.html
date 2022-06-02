@@ -1,0 +1,149 @@
+---
+layout: default
+title: Compatibility
+include-title: true
+uses-icons: true
+---
+
+<h2>Supported operating systems</h2>
+
+<table class="support">
+    <tr>
+        <th>OS</th>
+        <th>Web</th>
+        <th>Windows</th>
+        <th>macOS</th>
+        <th>Linux</th>
+        <th>Android</th>
+        <th>iOS</th>
+    </tr>
+    <tr>
+        <th>Support</th>
+        <th class="y">Supported</th>
+        <th class="y">Supported</th>
+        <th class="n">No maintainers<sup><a href="#apple-support">1</a></sup></th>
+        <th class="y">Supported</th>
+        <th class="y">Supported</th>
+        <th class="n">No maintainers<sup><a href="#apple-support">1</a></sup></th>
+    </tr>
+    <tr>
+        <th>Backends</th>
+        <th class="i">Only Pleroma<sup><a href="#cors">2</a></sup></th>
+        <th class="y" colspan=5>All</th>
+    </tr>
+</table>
+
+<ol>
+    <li id="apple-support">
+        Kaiteki has no support for Apple platforms (macOS, iOS, etc.) since there are no developers being able to maintain it. If you would like to take over, contact us.
+    </li>
+    <li id="cors">
+        Mastodon and Misskey instances have by default HTTP headers which make the browser prevent sending requests within other domains like kaiteki.craftplacer.moe because of <abbr title="Cross-Origin Resource Sharing"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a></abbr>.
+        This makes effectively those backends unusable on web.
+    </li>
+</ol>
+
+<h2>Supported backends</h2>
+
+<p>Currently the following backends are going to be supported by Kaiteki:</p>
+<ul>
+    <li><a href="https://joinmastodon.org">Mastodon</a></li>
+    <li><a href="https://pleroma.social">Pleroma</a></li>
+    <li><a href="https://join.misskey.page/">Misskey</a></li>
+    <li><a href="https://twitter.com/">Twitter</a></li>
+</ul>
+
+<p>This table shows unique features from the supported backends and if they're implemented yet.</p>
+
+<table class="support">
+    <tr>
+        <th>Feature / Backend</th>
+        <th class="th-dv">Mastodon</th>
+        <th class="th-dv">Pleroma</th>
+        <th class="th-dv">Misskey</th>
+        <th class="th-dv">Twitter</th>
+    </tr>
+    <tr>
+        <th>Notifications</th>
+        <td class="p" colspan=4><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/56">Planned (<span aria-label="GitHub issue">#</span>56)</a></td>
+    </tr>
+    <tr>
+        <th>Polls</th>
+        <td class="p" colspan=4>Not implemented yet</td>
+    </tr>
+    <tr>
+        <th>Formatting</th>
+        <td class="n">Not supported</td>
+        <td class="i">Partially implemented</td>
+        <td class="i">Partial MFM support<br><i>(no Markdown though)</i></td>
+        <td class="n">Not supported</td>
+    </tr>
+    <tr>
+        <th>Stickers</th>
+        <td class="n">Not supported</td>
+        <td class="p">Planned</td>
+        <td class="n" colspan=2>Not supported</td>
+    </tr>
+    <tr>
+        <th>Chatting</th>
+        <td class="n">Not supported</td>
+        <td class="y" colspan=2>Supported</td>
+        <td class="p">Not implemented yet</td>
+    </tr>
+    <tr>
+        <th>Reacting</th>
+        <td class="n">Not supported</td>
+        <td class="i" colspan=2>Minimal support</td>
+        <td class="n">Not supported</td>
+    </tr>
+    <tr>
+        <th>Previewing</th>
+        <td class="n">Not supported</td>
+        <td class="y">Supported</td>
+        <td class="p"><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/109">Blocked by <span aria-label="GitHub issue">#</span>109</a></td>
+        <td class="n">Not supported</td>
+    </tr>
+    <tr>
+        <th>Lists</th>
+        <td class="p" colspan=4>Planned</td>
+    </tr>
+    <tr>
+        <th>Official frontend themes</th>
+        <td class="n">Not supported</td>
+        <td class="p" colspan=1><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/50">Planned (<span aria-label="GitHub issue">#</span>50)</a></td>
+        <td class="p" colspan=1><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/51">Planned (<span aria-label="GitHub issue">#</span>51)</a></td>
+        <td class="n">Not supported</td>
+    </tr>
+</table>
+
+<h3>Authentication</h3>
+
+<table class="support">
+    <tr>
+        <th colspan="2">Authentication Method / Backend</th>
+        <th class="th-dv">Mastodon</th>
+        <th class="th-dv">Pleroma</th>
+        <th class="th-dv">Misskey</th>
+        <th class="th-dv">Twitter</th>
+    </tr>
+    <tr>
+        <th colspan="2">Direct token entry</th>
+        <td class="p" colspan=4><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/105">Planned (<span aria-label="GitHub issue">#</span>105)</a></td>
+    </tr>
+    <tr>
+        <th rowspan="2">Login over credentials</th>
+        <th>Normal</th>
+        <td class="y" colspan=3>Supported</td>
+        <td rowspan="2" class="n">Not supported</td>
+    </tr>
+    <tr>
+        <th><abbr title="Two-Factor-Authentication">2FA</abbr></th>
+        <td class="n">Not tested</td>
+        <td class="y">Supported</td>
+        <td class="p">Not implemented yet</td>
+    </tr>
+    <tr>
+        <th colspan="2">OAuth<br><i>(authentication over browser)</i></th>
+        <td class="y" colspan=4>Supported</td>
+    </tr>
+</table>
