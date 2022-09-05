@@ -1,4 +1,4 @@
-name: Jekyll
+name: Build
 
 on:
   workflow_dispatch:
@@ -15,6 +15,7 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.0
+        bundler-cache: true
 
     - name: Checkout
       uses: actions/checkout@v2
@@ -22,6 +23,7 @@ jobs:
     - name: Build
       uses: limjh16/jekyll-action-ts@v2
       with:
+        enable_cache: true
         jekyll_src: './src/'
         format_output: true
         custom_opts: '-d ./publish/'
