@@ -1,0 +1,33 @@
+name: Jekyll
+
+on:
+  workflow_dispatch:
+  push:
+
+env:
+  JEKYLL_ENV: production
+
+jobs:
+  jekyll:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Build
+      uses: limjh16/jekyll-action-ts@v2
+      with:
+        jekyll_src: './src/'
+        format_output: true
+        custom_opts: '-d ./publish/'
+
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+        name: website
+        path: ./publish/
