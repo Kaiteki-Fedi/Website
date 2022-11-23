@@ -7,7 +7,7 @@ include-title: true
 <h2>Kaiteki's API structure</h2>
 
 <figure>
-    <img src="{{site.url}}/img/api-structure.png" width="600" style="display: block; margin: 0 auto; max-width: 100%;">
+    <img src="{% link /img/api-structure.png %}" width="600" style="display: block; margin: 0 auto; max-width: 100%;">
     <figcaption>Kaiteki's internal code structure, starting from the frontend all the way to the backends</figcaption>
 </figure>
 

@@ -11,7 +11,9 @@ manual-layout: true
         <ul>
             {% for item in site.help %}
             {% if item.url != "/help" %}
-            <li class="{% if item.url == page.url %}selected{%endif%}"><a href="{{ item.url }}">{{ item.title }}</a></li>
+            <li class="{% if item.url == page.url %}selected{%endif%}">
+                <a href="{% link {{ item.path }} %}">{{ item.title }}</a>
+            </li>
             {% endif %}
             {% endfor %}
         </ul>

@@ -8,8 +8,8 @@ banner: "/img/login-experience-overhaul/thumbnail.png"
 With commit [`29656d1`](https://github.com/Craftplacer/Kaiteki/commit/29656d1a9c95076acce269610ac71be8ff23cd88) the entire login screen was revamped.
 
 <video controls muted>
-    <source src="{{site.url}}/vid/30EEC26950A328CA.mp4" type="video/mp4">
-    <source src="{{site.url}}/vid/3167C3AB3499549B.webm" type="video/webm">
+    <source src="{% link /vid/30EEC26950A328CA.mp4 %}" type="video/mp4">
+    <source src="{% link /vid/3167C3AB3499549B.webm %}" type="video/webm">
 </video>
 
 ## New features

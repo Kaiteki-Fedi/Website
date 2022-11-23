@@ -7,9 +7,9 @@ layout: default
 <div class="post-list">
     {% for post in site.posts %}
     <div class="post">
-        <img class="cover" src="{{site.url}}{{ post.banner | default: default-thumbnail }}">
+        <img class="cover" src="{% link {{ post.banner | default: default-thumbnail }}%}">
         <div>
-            <a href="{{site.url}}{{ post.url }}">
+            <a href="{% link {{ post.path }} %}">
                 <h2>{{post.title}}</h2>
             </a>
             <p class="post-meta secondary-text">{% include post-meta.html %}</p>

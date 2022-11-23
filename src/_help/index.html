@@ -11,7 +11,7 @@ not-help: true
         {% for subpage in site.help %}
         {% unless subpage.not-help %}
         <li>
-            <a class="card-title" href="{{ subpage.url }}">{{ subpage.title }}</a>
+            <a class="card-title" href="{% link {{ subpage.path }} %}">{{ subpage.title }}</a>
             <p>{{subpage.excerpt | strip_html }}</p>
         </li>
         {% endunless %}

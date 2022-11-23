@@ -1,5 +1,5 @@
 <meta name="theme-color" content="#FF7890">
-<link rel="icon" href="{{site.url}}/favicon.ico" type="image/x-icon">
+<link rel="icon" href="{% link /favicon.ico %}" type="image/x-icon">
 {% if page.title %}
 <title>{{ page.title }} - {{ site.title }}</title>
 <meta property="og:title" content="{{ page.title }}" />
@@ -10,10 +10,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 {% if page.banner %}
-<meta property="og:image" content="{{site.url}}{{page.banner}}" />
+<meta property="og:image" content="{% link {{page.banner}} %}" />
 <meta name="twitter:card" content="summary_large_image">
 {% else %}
-<meta property="og:image" content="{{site.url}}/img/kaiteki.png" />
+<meta property="og:image" content="{% link /img/kaiteki.png %}" />
 <meta name="twitter:card" content="summary">
 {% endif %}
 {% if page.author and site.data.authors[page.author].twitter %}
