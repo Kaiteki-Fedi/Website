@@ -1,6 +1,5 @@
 title: Kaiteki
-baseurl: "https://craftplacer.moe/projects/kaiteki"
-url: "https://craftplacer.moe/projects/kaiteki"
+baseurl: "projects/kaiteki"
 # paginate: 10
 permalink: /posts/:categories/:year/:month/:day/:title/
 plugins: [jekyll-feed]
