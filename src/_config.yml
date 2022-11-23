@@ -1,5 +1,5 @@
 title: Kaiteki
-baseurl: ""
+baseurl: "https://craftplacer.moe/projects/kaiteki"
 url: "https://craftplacer.moe/projects/kaiteki"
 # paginate: 10
 permalink: /posts/:categories/:year/:month/:day/:title/
