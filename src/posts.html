@@ -9,7 +9,7 @@ layout: default
     <div class="post">
         <img class="cover" src="{{site.url}}{{ post.banner | default: default-thumbnail }}">
         <div>
-            <a href="{{ post.url }}">
+            <a href="{{site.url}}{{ post.url }}">
                 <h2>{{post.title}}</h2>
             </a>
             <p class="post-meta secondary-text">{% include post-meta.html %}</p>
