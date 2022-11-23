@@ -3,7 +3,10 @@ layout: default
 ---
 
 <p class="post-meta">
-{% assign post = page %}
-{% include post-meta.html %}
+    {% assign post = page %}
+    {% include post-meta.html %}
 </p>
-<article>{{content}}</article>
+<article>
+    <h1>{{post.title}}</h1>
+    {{content}}
+</article>

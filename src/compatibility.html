@@ -28,18 +28,25 @@ uses-icons: true
     </tr>
     <tr>
         <th>Backends</th>
-        <th class="i">Only Pleroma<sup><a href="#cors">2</a></sup></th>
+        <th class="i">Only Pleroma<sup><a href="#cors">2</a><a href="#oauth">3</a></sup></th>
         <th class="y" colspan=5>All</th>
     </tr>
 </table>
 
 <ol>
     <li id="apple-support">
-        Kaiteki has no support for Apple platforms (macOS, iOS, etc.) since there are no developers being able to maintain it. If you would like to take over, contact us.
+        Kaiteki has no support for Apple platforms (macOS, iOS, etc.) since there are no developers being able to
+        maintain it. If you would like to take over, contact us.
     </li>
     <li id="cors">
-        Mastodon and Misskey instances have by default HTTP headers which make the browser prevent sending requests within other domains like kaiteki.craftplacer.moe because of <abbr title="Cross-Origin Resource Sharing"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a></abbr>.
+        Mastodon and Misskey instances have by default HTTP headers which make the browser prevent sending requests
+        within other domains like kaiteki.craftplacer.moe because of <abbr title="Cross-Origin Resource Sharing"><a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a></abbr>.
         This makes effectively those backends unusable on web.
+    </li>
+    <li id="oauth">
+        Kaiteki does not support deep links for authentication yet. This means that websites that only support an OAuth2
+        login flow, are not usable with the web version. This might change in the future.
     </li>
 </ol>
 
@@ -65,7 +72,8 @@ uses-icons: true
     </tr>
     <tr>
         <th>Notifications</th>
-        <td class="p" colspan=4><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/56">Planned (<span aria-label="GitHub issue">#</span>56)</a></td>
+        <td class="p" colspan="3"><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/56">Planned (<span aria-label="GitHub issue">#</span>56)</a></td>
+        <td class="n">Not supported</td>
     </tr>
     <tr>
         <th>Polls</th>
@@ -73,35 +81,35 @@ uses-icons: true
     </tr>
     <tr>
         <th>Formatting</th>
-        <td class="n">Not supported</td>
+        <td class="na">N/A</td>
         <td class="i">Partially implemented</td>
         <td class="i">Partial MFM support<br><i>(no Markdown though)</i></td>
-        <td class="n">Not supported</td>
+        <td class="na">N/A</td>
     </tr>
     <tr>
         <th>Stickers</th>
-        <td class="n">Not supported</td>
+        <td class="na">N/A</td>
         <td class="p">Planned</td>
-        <td class="n" colspan=2>Not supported</td>
+        <td class="na" colspan=2>N/A</td>
     </tr>
     <tr>
         <th>Chatting</th>
-        <td class="n">Not supported</td>
+        <td class="na">N/A</td>
         <td class="y" colspan=2>Supported</td>
         <td class="p">Not implemented yet</td>
     </tr>
     <tr>
         <th>Reacting</th>
-        <td class="n">Not supported</td>
+        <td class="na">N/A</td>
         <td class="i" colspan=2>Minimal support</td>
-        <td class="n">Not supported</td>
+        <td class="na">N/A</td>
     </tr>
     <tr>
         <th>Previewing</th>
-        <td class="n">Not supported</td>
+        <td class="na">N/A</td>
         <td class="y">Supported</td>
-        <td class="p"><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/109">Blocked by <span aria-label="GitHub issue">#</span>109</a></td>
-        <td class="n">Not supported</td>
+        <td class="p">Not implemented yet</td>
+        <td class="na">N/A</td>
     </tr>
     <tr>
         <th>Lists</th>
@@ -109,12 +117,43 @@ uses-icons: true
     </tr>
     <tr>
         <th>Official frontend themes</th>
-        <td class="n">Not supported</td>
+        <td class="na">N/A</td>
         <td class="p" colspan=1><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/50">Planned (<span aria-label="GitHub issue">#</span>50)</a></td>
         <td class="p" colspan=1><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/51">Planned (<span aria-label="GitHub issue">#</span>51)</a></td>
-        <td class="n">Not supported</td>
+        <td class="na">N/A</td>
     </tr>
 </table>
+
+<h3>Backend notes</h3>
+
+<h4 id="twitter">Twitter</h4>
+
+Twitter has public APIs which have many limitations and thus worsen the experience on Kaiteki. Below is a list of already
+known issues:
+
+<ol>
+    <li>You cannot tweet to your Twitter Circle. <a href="#twitter-no-endpoint"><sup>[1]</sup></a></li>
+    <li>You cannot update your profile. <a href="#twitter-no-v2"><sup>[2]</sup></a></li>
+    <li>You cannot view your notifications. <a href="#twitter-no-endpoint"><sup>[1]</sup></a></li>
+    <li>Banners are not visible. <a href="#twitter-no-v2"><sup>[2]</sup></a></li>
+    <li>Direct messages are not available. <a href="#twitter-no-v2"><sup>[2]</sup></a></li>
+    <li>Not all tweets from a thread/conversation can be viewed. <a href="#twitter-conversations"><sup>[4]</sup></a></li>
+    <li>Tweet caps are shared among Kaiteki users. <a href="#twitter-tweet-cap"><sup>[3]</sup></a></li>
+    <li>Tweets don't show whether they have been liked or retweeted before. <a href="#twitter-no-v2"><sup>[2]</sup></a></li>
+</ol>
+<p id="twitter-no-endpoint">
+    <sup>1</sup> Twitter does not expose the functionality in their API.
+</p>
+<p id="twitter-no-v2">
+    <sup>2</sup> Feature was not migrated from v1. See <a href="https://developer.twitter.com/en/docs/twitter-api/migrate/twitter-api-endpoint-map">Twitter API endpoint map | Docs | Twitter Developer Platform</a>
+</p>
+<p id="twitter-tweet-cap">
+    <sup>3</sup> See <a href="https://developer.twitter.com/en/docs/twitter-api/tweet-caps">Twitter API v2 Tweet caps | Docs | Twitter Developer Platform</a>.
+</p>
+<p id="twitter-conversations">
+    <sup>4</sup> Twitter doesn't offer an endpoint for retrieving conversations, but only offer a search endpoint which
+    only returns tweets from the last 7 days. See <a href="https://developer.twitter.com/en/docs/twitter-api/conversation-id">Conversation ID | Docs | Twitter Developer Platform</a>.
+</p>
 
 <h3>Authentication</h3>
 
@@ -128,17 +167,19 @@ uses-icons: true
     </tr>
     <tr>
         <th colspan="2">Direct token entry</th>
-        <td class="p" colspan=4><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/105">Planned (<span aria-label="GitHub issue">#</span>105)</a></td>
+        <td class="p" colspan=4>
+            <a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/105">Planned (<span aria-label="GitHub issue">#</span>105)</a>
+        </td>
     </tr>
     <tr>
         <th rowspan="2">Login over credentials</th>
         <th>Normal</th>
         <td class="y" colspan=3>Supported</td>
-        <td rowspan="2" class="n">Not supported</td>
+        <td rowspan="2" class="na">N/A</td>
     </tr>
     <tr>
         <th><abbr title="Two-Factor-Authentication">2FA</abbr></th>
-        <td class="n">Not tested</td>
+        <td class="na">N/A</td>
         <td class="y">Supported</td>
         <td class="p">Not implemented yet</td>
     </tr>

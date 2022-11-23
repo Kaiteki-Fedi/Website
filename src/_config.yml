@@ -6,3 +6,15 @@ permalink: /posts/:categories/:year/:month/:day/:title/
 plugins: [jekyll-feed]
 sass:
   style: compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "help"
+    values:
+      layout: "help"
+
+collections:
+  help:
+    output: true

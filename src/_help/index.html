@@ -1,0 +1,20 @@
+---
+layout: default
+title: Help Index
+permalink: /help
+not-help: true
+---
+
+<div>
+    <h1>Help Index</h1>
+    <ul class="card-list">
+        {% for subpage in site.help %}
+        {% unless subpage.not-help %}
+        <li>
+            <a class="card-title" href="{{ subpage.url }}">{{ subpage.title }}</a>
+            <p>{{subpage.excerpt | strip_html }}</p>
+        </li>
+        {% endunless %}
+        {% endfor %}
+    </ul>
+</div>

@@ -6,11 +6,16 @@
 {% else %}
 <title>{{ site.title }}</title>
 {% endif %}
-<meta name="twitter:card" content="summary">
 <meta property="og:site_name" content="Kaiteki" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
+{% if page.banner %}
+<meta property="og:image" content="{{site.url}}{{page.banner}}" />
+<meta name="twitter:card" content="summary_large_image">
+{% else %}
 <meta property="og:image" content="{{site.url}}/img/kaiteki.png" />
+<meta name="twitter:card" content="summary">
+{% endif %}
 {% if page.author and site.data.authors[page.author].twitter %}
 <meta name="twitter:creator" content="@{{site.data.authors[page.author].twitter}}">
 {% endif %}

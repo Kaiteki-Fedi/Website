@@ -2,6 +2,7 @@
 title: "Login experience overhaul"
 layout: post
 author: craftplacer
+banner: "/img/login-experience-overhaul/thumbnail.png"
 ---
 
 With commit [`29656d1`](https://github.com/Craftplacer/Kaiteki/commit/29656d1a9c95076acce269610ac71be8ff23cd88) the entire login screen was revamped.

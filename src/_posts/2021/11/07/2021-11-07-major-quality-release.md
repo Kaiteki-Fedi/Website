@@ -2,6 +2,7 @@
 title: "Major quality release"
 layout: post
 author: craftplacer
+banner: "/img/major-quality-release/thumbnail.png"
 ---
 
 This new commit batch had many code fixes this time, resulting in less broken elements making Kaiteki more usable.
