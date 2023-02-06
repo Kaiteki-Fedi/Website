@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FF7890">
+<link rel="icon" href="/projects/kaiteki/favicon.ico" type="image/x-icon">
+
+<title>Compatibility - Kaiteki</title>
+<meta property="og:title" content="Compatibility" />
+
+<meta property="og:site_name" content="Kaiteki" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+
+<meta property="og:image" content="/projects/kaiteki/img/kaiteki.png" />
+<meta name="twitter:card" content="summary">
+
+
+
+<meta name="description" content="The comfy Fediverse client">
+<meta property="og:description" content="The comfy Fediverse client" />
+
+  <link rel="stylesheet" href="/projects/kaiteki/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</noscript>
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
+</noscript>
+
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": [ "SoftwareApplication", "MobileApplication", "WebApplication" ],
+    "name": "Kaiteki",
+    "description": "The comfy Fediverse client",
+    "operatingSystem": "Web, Windows, Linux, Android",
+    "applicationCategory": "SocialNetworkingApplication",
+    "browserRequirements": "requires HTML5, WebAssembly, WebGL",
+    "license": "https://www.gnu.org/licenses/agpl-3.0.en.html",
+    "logo": "/projects/kaiteki/img/kaiteki.png",
+    "offers": {
+        "@type": "Offer",
+        "price": "0"
+    }
+}
+</script>
+</head>
+
+<body>
+  <nav>
+    <div class="navigation-container">
+        <a id="kaiteki-logo" href="/projects/kaiteki/">
+            <img alt="" src="/projects/kaiteki/img/kaiteki-64x.png">
+            <span>Kaiteki</span>
+        </a>
+        <ul>
+            <li><a href="/projects/kaiteki/posts/">Posts</a></li>
+            <li><a href="/projects/kaiteki/compatibility/">Compatibility</a></li>
+            <li><a href="/projects/kaiteki/contribute/">Contribute</a></li>
+            <li><a href="/projects/kaiteki/help">Help</a></li>
+        </ul>
+    </div>
+</nav>
+  
+  <main class="centered">
+    
+    <h1>Compatibility</h1>
+    
+    <h2>Supported operating systems</h2>
+
+<table class="support">
+    <tr>
+        <th>OS</th>
+        <th>Web</th>
+        <th>Windows</th>
+        <th>macOS</th>
+        <th>Linux</th>
+        <th>Android</th>
+        <th>iOS</th>
+    </tr>
+    <tr>
+        <th>Support</th>
+        <th class="y">Supported</th>
+        <th class="y">Supported</th>
+        <th class="n">No maintainers<sup><a href="#apple-support">1</a></sup></th>
+        <th class="y">Supported</th>
+        <th class="y">Supported</th>
+        <th class="n">No maintainers<sup><a href="#apple-support">1</a></sup></th>
+    </tr>
+    <tr>
+        <th>Backends</th>
+        <th class="i">Only Pleroma<sup><a href="#cors">2</a><a href="#oauth">3</a></sup></th>
+        <th class="y" colspan=5>All</th>
+    </tr>
+</table>
+
+<ol>
+    <li id="apple-support">
+        Kaiteki has no support for Apple platforms (macOS, iOS, etc.) since there are no developers being able to
+        maintain it. If you would like to take over, contact us.
+    </li>
+    <li id="cors">
+        Mastodon and Misskey instances have by default HTTP headers which make the browser prevent sending requests
+        within other domains like kaiteki.craftplacer.moe because of <abbr title="Cross-Origin Resource Sharing"><a
+                href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a></abbr>.
+        This makes effectively those backends unusable on web.
+    </li>
+    <li id="oauth">
+        Kaiteki does not support deep links for authentication yet. This means that websites that only support an OAuth2
+        login flow, are not usable with the web version. This might change in the future.
+    </li>
+</ol>
+
+<h2>Supported backends</h2>
+
+<p>Currently the following backends are going to be supported by Kaiteki:</p>
+<ul>
+    <li><a href="https://joinmastodon.org">Mastodon</a></li>
+    <li><a href="https://pleroma.social">Pleroma</a></li>
+    <li><a href="https://join.misskey.page/">Misskey</a></li>
+    <li><a href="https://twitter.com/">Twitter</a></li>
+</ul>
+
+<p>This table shows unique features from the supported backends and if they're implemented yet.</p>
+
+<table class="support">
+    <tr>
+        <th>Feature / Backend</th>
+        <th class="th-dv">Mastodon</th>
+        <th class="th-dv">Pleroma</th>
+        <th class="th-dv">Misskey</th>
+        <th class="th-dv">Twitter</th>
+    </tr>
+    <tr>
+        <th>Notifications</th>
+        <td class="y" colspan="3">Supported</td>
+        <td class="n">Not supported</td>
+    </tr>
+    <tr>
+        <th>Polls</th>
+        <td class="i" colspan=3>Viewing only</td>
+        <td class="p">Not implemented yet</td>
+    </tr>
+    <tr>
+        <th>Formatting</th>
+        <td class="na" rowspan="5">N/A</td>
+        <td class="i">Partially implemented</td>
+        <td class="i">Partial MFM support<br><i>(no Markdown though)</i></td>
+        <td class="na" rowspan="2">N/A</td>
+    </tr>
+    <tr>
+        <th>Stickers</th>
+        <td class="p">Planned</td>
+        <td class="na">N/A</td>
+    </tr>
+    <tr>
+        <th>Chatting</th>
+        <td class="i" colspan=2>Work in progress</td>
+        <td class="p">Not implemented yet</td>
+    </tr>
+    <tr>
+        <th>Reacting</th>
+        <td class="y" colspan=2>Supported</td>
+        <td class="na" rowspan="2">N/A</td>
+    </tr>
+    <tr>
+        <th>Previewing</th>
+        <td class="y">Supported</td>
+        <td class="p">Not implemented yet</td>
+    </tr>
+    <tr>
+        <th>Lists</th>
+        <td class="y" colspan=3>Supported</td>
+        <td class="p">Not implemented yet</td>
+    </tr>
+    <tr>
+        <th>Official frontend themes</th>
+        <td class="na">N/A</td>
+        <td class="p" colspan=1><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/50">Planned (<span aria-label="GitHub issue">#</span>50)</a></td>
+        <td class="p" colspan=1><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/51">Planned (<span aria-label="GitHub issue">#</span>51)</a></td>
+        <td class="na">N/A</td>
+    </tr>
+</table>
+
+<h3>Backend notes</h3>
+
+<h4 id="twitter">Twitter</h4>
+
+Twitter has public APIs which have many limitations and thus worsen the experience on Kaiteki. Below is a list of already
+known issues:
+
+<ol>
+    <li>You cannot tweet to your Twitter Circle. <a href="#twitter-no-endpoint"><sup>[1]</sup></a></li>
+    <li>You cannot update your profile. <a href="#twitter-no-v2"><sup>[2]</sup></a></li>
+    <li>You cannot view your notifications. <a href="#twitter-no-endpoint"><sup>[1]</sup></a></li>
+    <li>Banners are not visible. <a href="#twitter-no-v2"><sup>[2]</sup></a></li>
+    <li>Direct messages are not available. <a href="#twitter-no-v2"><sup>[2]</sup></a></li>
+    <li>Not all tweets from a thread/conversation can be viewed. <a href="#twitter-conversations"><sup>[4]</sup></a></li>
+    <li>Tweet caps are shared among Kaiteki users. <a href="#twitter-tweet-cap"><sup>[3]</sup></a></li>
+    <li>Tweets don't show whether they have been liked or retweeted before. <a href="#twitter-no-v2"><sup>[2]</sup></a></li>
+</ol>
+<p id="twitter-no-endpoint">
+    <sup>1</sup> Twitter does not expose the functionality in their API.
+</p>
+<p id="twitter-no-v2">
+    <sup>2</sup> Feature was not migrated from v1. See <a href="https://developer.twitter.com/en/docs/twitter-api/migrate/twitter-api-endpoint-map">Twitter API endpoint map | Docs | Twitter Developer Platform</a>
+</p>
+<p id="twitter-tweet-cap">
+    <sup>3</sup> See <a href="https://developer.twitter.com/en/docs/twitter-api/tweet-caps">Twitter API v2 Tweet caps | Docs | Twitter Developer Platform</a>.
+</p>
+<p id="twitter-conversations">
+    <sup>4</sup> Twitter doesn't offer an endpoint for retrieving conversations, but only offer a search endpoint which
+    only returns tweets from the last 7 days. See <a href="https://developer.twitter.com/en/docs/twitter-api/conversation-id">Conversation ID | Docs | Twitter Developer Platform</a>.
+</p>
+
+<h3>Authentication</h3>
+
+<table class="support">
+    <tr>
+        <th colspan="2">Authentication Method / Backend</th>
+        <th class="th-dv">Mastodon</th>
+        <th class="th-dv">Pleroma</th>
+        <th class="th-dv">Misskey</th>
+        <th class="th-dv">Twitter</th>
+    </tr>
+    <tr>
+        <th colspan="2">Direct token entry</th>
+        <td class="p" colspan=4>
+            <a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/105">Planned (<span aria-label="GitHub issue">#</span>105)</a>
+        </td>
+    </tr>
+    <tr>
+        <th rowspan="2">Login over credentials</th>
+        <th>Normal</th>
+        <td class="y" colspan=3>Supported</td>
+        <td rowspan="2" class="na">N/A</td>
+    </tr>
+    <tr>
+        <th><abbr title="Two-Factor-Authentication">2FA</abbr></th>
+        <td class="na">N/A</td>
+        <td class="y">Supported</td>
+        <td class="p">Not implemented yet</td>
+    </tr>
+    <tr>
+        <th colspan="2">OAuth<br><i>(authentication over browser)</i></th>
+        <td class="y" colspan=4>Supported</td>
+    </tr>
+</table>
+  </main>
+  
+  <footer>
+    <span class="left">Made with &lt;3 by <a href="https://craftplacer.moe">Craftplacer</a> and <a href="https://github.com/Kaiteki-Fedi/Kaiteki/graphs/contributors">contributors</a></span>
+    <span class="right"><a href="https://github.com/Kaiteki-Fedi/Kaiteki/">GitHub</a> • <a href="https://t.me/kaiteki_fedi">Telegram</a> • <a rel="me" href="https://floss.social/@Kaiteki">Fediverse</a></span>
+</footer>
+</body>
+
+</html>

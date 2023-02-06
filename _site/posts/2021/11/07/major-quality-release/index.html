@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FF7890">
+<link rel="icon" href="/projects/kaiteki/favicon.ico" type="image/x-icon">
+
+<title>Major quality release - Kaiteki</title>
+<meta property="og:title" content="Major quality release" />
+
+<meta property="og:site_name" content="Kaiteki" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+
+<meta property="og:image" content="/projects/kaiteki/img/major-quality-release/thumbnail.png" />
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:creator" content="@Craftplacer">
+
+
+
+<meta name="description" content="This new commit batch had many code fixes this time, resulting in less broken elements making Kaiteki more usable.UI changes      The main screen has a compact navigation rail now with the compose button being permanently visible.        Slight compose dialog redesigns, alongside it being the first dialog to be adaptive to the screen resolution.    (Try resizing your window while having it open!)        Post metadata should now have the correct color for the current theme.  Bug fixes      Debug post submission has been removed. This slipped into production making it impossible to actually submit posts via Kaiteki.        Rich text will now inherit from the surrounding UI. Expect less black or white text contrasting out of nowhere.        Emojis are now 1.5x of the normal text height, making them more readable.        The login screen now got its transition animation.        Kaiteki will display a placeholder avatar when the remote image is not accessible.  Code quality changes      ApiToDart has been worked on, ensuring more accurate generation of data classes, Misskey being the one benefiting most out of it.        The data of API responses are now being saved in another class, to ensure being able to correctly parse error messages in case of any. This also resolves Kaiteki being unable to parse errors from Misskey.        More default values and fallbacks for Misskey data model conversion.  and many more minor changes…">
+<meta property="og:description" content="This new commit batch had many code fixes this time, resulting in less broken elements making Kaiteki more usable.UI changes      The main screen has a compact navigation rail now with the compose button being permanently visible.        Slight compose dialog redesigns, alongside it being the first dialog to be adaptive to the screen resolution.    (Try resizing your window while having it open!)        Post metadata should now have the correct color for the current theme.  Bug fixes      Debug post submission has been removed. This slipped into production making it impossible to actually submit posts via Kaiteki.        Rich text will now inherit from the surrounding UI. Expect less black or white text contrasting out of nowhere.        Emojis are now 1.5x of the normal text height, making them more readable.        The login screen now got its transition animation.        Kaiteki will display a placeholder avatar when the remote image is not accessible.  Code quality changes      ApiToDart has been worked on, ensuring more accurate generation of data classes, Misskey being the one benefiting most out of it.        The data of API responses are now being saved in another class, to ensure being able to correctly parse error messages in case of any. This also resolves Kaiteki being unable to parse errors from Misskey.        More default values and fallbacks for Misskey data model conversion.  and many more minor changes…" />
+
+  <link rel="stylesheet" href="/projects/kaiteki/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</noscript>
+
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": [ "SoftwareApplication", "MobileApplication", "WebApplication" ],
+    "name": "Kaiteki",
+    "description": "The comfy Fediverse client",
+    "operatingSystem": "Web, Windows, Linux, Android",
+    "applicationCategory": "SocialNetworkingApplication",
+    "browserRequirements": "requires HTML5, WebAssembly, WebGL",
+    "license": "https://www.gnu.org/licenses/agpl-3.0.en.html",
+    "logo": "/projects/kaiteki/img/kaiteki.png",
+    "offers": {
+        "@type": "Offer",
+        "price": "0"
+    }
+}
+</script>
+</head>
+
+<body>
+  <nav>
+    <div class="navigation-container">
+        <a id="kaiteki-logo" href="/projects/kaiteki/">
+            <img alt="" src="/projects/kaiteki/img/kaiteki-64x.png">
+            <span>Kaiteki</span>
+        </a>
+        <ul>
+            <li><a href="/projects/kaiteki/posts/">Posts</a></li>
+            <li><a href="/projects/kaiteki/compatibility/">Compatibility</a></li>
+            <li><a href="/projects/kaiteki/contribute/">Contribute</a></li>
+            <li><a href="/projects/kaiteki/help">Help</a></li>
+        </ul>
+    </div>
+</nav>
+  
+  <main class="centered">
+    
+    <p class="post-meta">
+    
+    
+
+
+<img src="https://www.libravatar.org/avatar/3052c9be1eb8f9f5f770ffa9c8ea5d21bdc9bd8193f15cd63d06dd1702fe385d?s=64" class="author-image" alt="">
+
+<span class="author-name">Craftplacer</span>
+<span>&bullet;</span>
+
+<span>Published on 07-11-2021</span>
+</p>
+<article>
+    <h1>Major quality release</h1>
+    <p>This new commit batch had many code fixes this time, resulting in less broken elements making Kaiteki more usable.</p>
+
+<h2 id="ui-changes">UI changes</h2>
+
+<ul>
+  <li>
+    <p>The main screen has a compact navigation rail now with the compose button being permanently visible.</p>
+  </li>
+  <li>
+    <p>Slight compose dialog redesigns, alongside it being the first dialog to be adaptive to the screen resolution.</p>
+
+    <p>(Try resizing your window while having it open!)</p>
+  </li>
+  <li>
+    <p>Post metadata should now have the correct color for the current theme.</p>
+  </li>
+</ul>
+
+<h2 id="bug-fixes">Bug fixes</h2>
+
+<ul>
+  <li>
+    <p>Debug post submission has been removed. This slipped into production making it impossible to actually submit posts via Kaiteki.</p>
+  </li>
+  <li>
+    <p>Rich text will now inherit from the surrounding UI. Expect less black or white text contrasting out of nowhere.</p>
+  </li>
+  <li>
+    <p>Emojis are now 1.5x of the normal text height, making them more readable.</p>
+  </li>
+  <li>
+    <p>The login screen now got its transition animation.</p>
+  </li>
+  <li>
+    <p>Kaiteki will display a placeholder avatar when the remote image is not accessible.</p>
+  </li>
+</ul>
+
+<h2 id="code-quality-changes">Code quality changes</h2>
+
+<ul>
+  <li>
+    <p>ApiToDart has been worked on, ensuring more accurate generation of data classes, Misskey being the one benefiting most out of it.</p>
+  </li>
+  <li>
+    <p>The data of API responses are now being saved in another class, to ensure being able to correctly parse error messages in case of any. This also resolves Kaiteki being unable to parse errors from Misskey.</p>
+  </li>
+  <li>
+    <p>More default values and fallbacks for Misskey data model conversion.</p>
+  </li>
+</ul>
+
+<p>and many more minor changes…</p>
+
+</article>
+  </main>
+  
+  <footer>
+    <span class="left">Made with &lt;3 by <a href="https://craftplacer.moe">Craftplacer</a> and <a href="https://github.com/Kaiteki-Fedi/Kaiteki/graphs/contributors">contributors</a></span>
+    <span class="right"><a href="https://github.com/Kaiteki-Fedi/Kaiteki/">GitHub</a> • <a href="https://t.me/kaiteki_fedi">Telegram</a> • <a rel="me" href="https://floss.social/@Kaiteki">Fediverse</a></span>
+</footer>
+</body>
+
+</html>

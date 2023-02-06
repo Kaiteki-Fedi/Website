@@ -1,0 +1,29 @@
+---
+layout: default
+include-title: false
+manual-layout: true
+---
+
+
+<div class="container-sidebar">
+    <div class="navigation-sidebar">
+        <span class="navigation-sidebar-title">Help</span>
+        <ul>
+            {% for item in site.help %}
+            {% if item.url != "/help" %}
+            <li class="{% if item.url == page.url %}selected{%endif%}">
+                <a href="{% link {{ item.path }} %}">{{ item.title }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="content">
+        <h1>{{page.title}}</h1>
+        <article>
+            {{content}}
+        </article>
+    </div>
+
+
+</div

@@ -1,0 +1,20 @@
+title: Kaiteki
+baseurl: "/projects/kaiteki"
+# paginate: 10
+permalink: /posts/:categories/:year/:month/:day/:title/
+plugins: [jekyll-feed]
+sass:
+  style: compressed
+exclude: [README.md, LICENSE]
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "help"
+    values:
+      layout: "help"
+
+collections:
+  help:
+    output: true

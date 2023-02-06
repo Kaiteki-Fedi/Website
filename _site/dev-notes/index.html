@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FF7890">
+<link rel="icon" href="/projects/kaiteki/favicon.ico" type="image/x-icon">
+
+<title>Development Notes - Kaiteki</title>
+<meta property="og:title" content="Development Notes" />
+
+<meta property="og:site_name" content="Kaiteki" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+
+<meta property="og:image" content="/projects/kaiteki/img/kaiteki.png" />
+<meta name="twitter:card" content="summary">
+
+
+
+<meta name="description" content="The comfy Fediverse client">
+<meta property="og:description" content="The comfy Fediverse client" />
+
+  <link rel="stylesheet" href="/projects/kaiteki/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</noscript>
+
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": [ "SoftwareApplication", "MobileApplication", "WebApplication" ],
+    "name": "Kaiteki",
+    "description": "The comfy Fediverse client",
+    "operatingSystem": "Web, Windows, Linux, Android",
+    "applicationCategory": "SocialNetworkingApplication",
+    "browserRequirements": "requires HTML5, WebAssembly, WebGL",
+    "license": "https://www.gnu.org/licenses/agpl-3.0.en.html",
+    "logo": "/projects/kaiteki/img/kaiteki.png",
+    "offers": {
+        "@type": "Offer",
+        "price": "0"
+    }
+}
+</script>
+</head>
+
+<body>
+  <nav>
+    <div class="navigation-container">
+        <a id="kaiteki-logo" href="/projects/kaiteki/">
+            <img alt="" src="/projects/kaiteki/img/kaiteki-64x.png">
+            <span>Kaiteki</span>
+        </a>
+        <ul>
+            <li><a href="/projects/kaiteki/posts/">Posts</a></li>
+            <li><a href="/projects/kaiteki/compatibility/">Compatibility</a></li>
+            <li><a href="/projects/kaiteki/contribute/">Contribute</a></li>
+            <li><a href="/projects/kaiteki/help">Help</a></li>
+        </ul>
+    </div>
+</nav>
+  
+  <main class="centered">
+    
+    <h1>Development Notes</h1>
+    
+    <h2>Kaiteki's API structure</h2>
+
+<figure>
+    <img src="/projects/kaiteki/img/api-structure.png" width="600" style="display: block; margin: 0 auto; max-width: 100%;" />
+    <figcaption>Kaiteki's internal code structure, starting from the frontend all the way to the backends</figcaption>
+</figure>
+
+<p>To make Kaiteki <abbr title="compatible with any backend">backend-agnostic</abbr>, it is important to make the app not reliant on any feature or data structure imposed by a certain API. While we don’t know what best practice is, there are open doors to keep iterating on the internal parts of the app on how things are implemented.</p>
+
+<p>Let’s talk about how Kaiteki is built up:</p>
+
+<ol>
+  <li>
+    <p>Here we have <strong>Kaiteki</strong> itself. <a href="https://github.com/Kaiteki-Fedi/Kaiteki/tree/master/src/kaiteki/lib/fediverse/model">Kaiteki defines it’s own data structures</a> used throughout the application.</p>
+  </li>
+  <li>
+    <p>We use the <a href="https://refactoring.guru/design-patterns/adapter"><strong>adapter</strong> design pattern</a>, we define basic capabilities that a social media backend can perform. <a href="https://github.com/Kaiteki-Fedi/Kaiteki/tree/master/src/kaiteki/lib/fediverse/interfaces">We also use mixins (i.e. interfaces)</a>, to implement individual features not shared by every backend. Currently adapters differentiate whether they support <em>chatting</em> or <em>reactions</em> (both not supported by Mastodon).</p>
+  </li>
+  <li>
+    <p>We create <strong>client</strong> classes which correspond to API endpoints. A key principle from Kaiteki is to not tamper with the API endpoints or models. This is why adapters exist.</p>
+  </li>
+  <li>
+    <p>At the end all requests go to the <strong>APIs</strong> themselves.</p>
+  </li>
+</ol>
+
+  </main>
+  
+  <footer>
+    <span class="left">Made with &lt;3 by <a href="https://craftplacer.moe">Craftplacer</a> and <a href="https://github.com/Kaiteki-Fedi/Kaiteki/graphs/contributors">contributors</a></span>
+    <span class="right"><a href="https://github.com/Kaiteki-Fedi/Kaiteki/">GitHub</a> • <a href="https://t.me/kaiteki_fedi">Telegram</a> • <a rel="me" href="https://floss.social/@Kaiteki">Fediverse</a></span>
+</footer>
+</body>
+
+</html>

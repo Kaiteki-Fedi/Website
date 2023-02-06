@@ -1,9 +1,0 @@
-{% if post.author %}
-{% assign author = site.data.authors[post.author] %}
-{% if author.image %}
-<img src="{{author.image}}" class="author-image" alt="">
-{% endif %}
-<span class="author-name">{{author.name}}</span>
-<span>&bullet;</span>
-{% endif %}
-<span>Published on {{post.date | date: "%d-%m-%Y"}}</span>

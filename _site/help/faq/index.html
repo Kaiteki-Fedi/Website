@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FF7890">
+<link rel="icon" href="/projects/kaiteki/favicon.ico" type="image/x-icon">
+
+<title>Frequently asked questions - Kaiteki</title>
+<meta property="og:title" content="Frequently asked questions" />
+
+<meta property="og:site_name" content="Kaiteki" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+
+<meta property="og:image" content="/projects/kaiteki/img/kaiteki.png" />
+<meta name="twitter:card" content="summary">
+
+
+
+
+<meta name="description" content="What is Kaiteki?">
+<meta property="og:description" content="What is Kaiteki?" />
+
+  <link rel="stylesheet" href="/projects/kaiteki/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</noscript>
+
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": [ "SoftwareApplication", "MobileApplication", "WebApplication" ],
+    "name": "Kaiteki",
+    "description": "The comfy Fediverse client",
+    "operatingSystem": "Web, Windows, Linux, Android",
+    "applicationCategory": "SocialNetworkingApplication",
+    "browserRequirements": "requires HTML5, WebAssembly, WebGL",
+    "license": "https://www.gnu.org/licenses/agpl-3.0.en.html",
+    "logo": "/projects/kaiteki/img/kaiteki.png",
+    "offers": {
+        "@type": "Offer",
+        "price": "0"
+    }
+}
+</script>
+</head>
+
+<body>
+  <nav>
+    <div class="navigation-container">
+        <a id="kaiteki-logo" href="/projects/kaiteki/">
+            <img alt="" src="/projects/kaiteki/img/kaiteki-64x.png">
+            <span>Kaiteki</span>
+        </a>
+        <ul>
+            <li><a href="/projects/kaiteki/posts/">Posts</a></li>
+            <li><a href="/projects/kaiteki/compatibility/">Compatibility</a></li>
+            <li><a href="/projects/kaiteki/contribute/">Contribute</a></li>
+            <li><a href="/projects/kaiteki/help">Help</a></li>
+        </ul>
+    </div>
+</nav>
+  
+  <main class="centered">
+    
+    <div class="container-sidebar">
+    <div class="navigation-sidebar">
+        <span class="navigation-sidebar-title">Help</span>
+        <ul>
+            
+            
+            <li class="">
+                <a href="/projects/kaiteki/help/auth/">Fixing authentication issues</a>
+            </li>
+            
+            
+            
+            <li class="selected">
+                <a href="/projects/kaiteki/help/faq/">Frequently asked questions</a>
+            </li>
+            
+            
+            
+            
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Frequently asked questions</h1>
+        <article>
+            <h2 id="what-is-kaiteki">What is Kaiteki?</h2>
+
+<p>In old man terms, Kaiteki is the following:</p>
+
+<blockquote>
+  <p>A cross-platform client for micro-blogging services</p>
+</blockquote>
+
+<p>Kaiteki is designed to work with websites similar to Twitter. The cross-platform part has a factor of two, because it supports multiple services (Mastodon-based, Misskey, Twitter, and whatever you can add support for) as well as multiple devices and operating systems (thanks to Flutter).</p>
+
+<h3 id="goals">Goals</h3>
+
+<p>Kaiteki tries to be powerful yet user-friendly.</p>
+
+<p>Kaiteki follows the cutting-edge <a href="https://material.io/">Material Design guidelines from Google</a> in order to deliver a high quality user experience.</p>
+
+<p>You are open to send us feedback and we will try to honor it.</p>
+
+<h2 id="what-is-kaiteki-not">What is Kaiteki <strong>not</strong>?</h2>
+
+<h3 id="a-client-tailored-to-just-one-platform">A client tailored to just one platform</h3>
+
+<p>Kaiteki started out with Pleroma in mind, but as it started off, the goal quickly switched to interoperability with Mastodon and Misskey. While doing so, Kaiteki has to be platform-agnostic and has to adapt in all kinds of situations.</p>
+
+<h3 id="a-web-based-client">A Web-based client</h3>
+
+<p>Kaiteki won’t be truly native (as it’s on top of Flutter and Dart), but it doesn’t use Electron (nor Chromium) to handle it’s UI. With Flutter growing and evolving there are many improvements to be seen that Kaiteki will inherit and benefit from.</p>
+
+<h3 id="fedilab-and-fediapp">Fedilab and Fedi.app</h3>
+
+<p>While both apps and Kaiteki share many features and intentions, there are giant philosophical differences in how things are handled.</p>
+
+<p>Kaiteki is trying to be traditional, yet flexible and modern.</p>
+
+<h3 id="an-activitypub-client">An ActivityPub client</h3>
+
+<p>ActivityPub is a server protocol. This means, that it enables instances running Mastodon, Pleroma, Misskey and so on to communicate and federate with each other.</p>
+
+<p>Kaiteki only interfaces to the APIs of the services that it supports and is not capable of doing federation on its own. Kaiteki is also not limited to just Fediverse backends.</p>
+
+        </article>
+    </div>
+
+
+</div
+  </main>
+  
+  <footer>
+    <span class="left">Made with &lt;3 by <a href="https://craftplacer.moe">Craftplacer</a> and <a href="https://github.com/Kaiteki-Fedi/Kaiteki/graphs/contributors">contributors</a></span>
+    <span class="right"><a href="https://github.com/Kaiteki-Fedi/Kaiteki/">GitHub</a> • <a href="https://t.me/kaiteki_fedi">Telegram</a> • <a rel="me" href="https://floss.social/@Kaiteki">Fediverse</a></span>
+</footer>
+</body>
+
+</html>

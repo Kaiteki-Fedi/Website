@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FF7890">
+<link rel="icon" href="/projects/kaiteki/favicon.ico" type="image/x-icon">
+
+<title>Login experience overhaul - Kaiteki</title>
+<meta property="og:title" content="Login experience overhaul" />
+
+<meta property="og:site_name" content="Kaiteki" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+
+<meta property="og:image" content="/projects/kaiteki/img/login-experience-overhaul/thumbnail.png" />
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:creator" content="@Craftplacer">
+
+
+
+<meta name="description" content="With commit 29656d1 the entire login screen was revamped.        New features  Instance probing: No need for knowing what software your instance runs on. Kaiteki will send out requests to known endpoints and will check what kind of instance you have.  Animations. (some of them are borked)  List of “suggested” instances for Fediverse newcomers, alongside a short description of most instances alongside their rules. (available here)  Instance logo and background are visible at the login screen  Lots of necessary internal changesRecent changes since first announcement  First implementation of keyboard shortcuts, more coming soon  About screen design changes (now shows Kaiteki’s colorful logo)  Tooltips on post scope and time (should also aid in screen readers)  Post time is displayed properly now (If conditions were messed up)You can try these changes now at: kaiteki.craftplacer.moe">
+<meta property="og:description" content="With commit 29656d1 the entire login screen was revamped.        New features  Instance probing: No need for knowing what software your instance runs on. Kaiteki will send out requests to known endpoints and will check what kind of instance you have.  Animations. (some of them are borked)  List of “suggested” instances for Fediverse newcomers, alongside a short description of most instances alongside their rules. (available here)  Instance logo and background are visible at the login screen  Lots of necessary internal changesRecent changes since first announcement  First implementation of keyboard shortcuts, more coming soon  About screen design changes (now shows Kaiteki’s colorful logo)  Tooltips on post scope and time (should also aid in screen readers)  Post time is displayed properly now (If conditions were messed up)You can try these changes now at: kaiteki.craftplacer.moe" />
+
+  <link rel="stylesheet" href="/projects/kaiteki/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</noscript>
+
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": [ "SoftwareApplication", "MobileApplication", "WebApplication" ],
+    "name": "Kaiteki",
+    "description": "The comfy Fediverse client",
+    "operatingSystem": "Web, Windows, Linux, Android",
+    "applicationCategory": "SocialNetworkingApplication",
+    "browserRequirements": "requires HTML5, WebAssembly, WebGL",
+    "license": "https://www.gnu.org/licenses/agpl-3.0.en.html",
+    "logo": "/projects/kaiteki/img/kaiteki.png",
+    "offers": {
+        "@type": "Offer",
+        "price": "0"
+    }
+}
+</script>
+</head>
+
+<body>
+  <nav>
+    <div class="navigation-container">
+        <a id="kaiteki-logo" href="/projects/kaiteki/">
+            <img alt="" src="/projects/kaiteki/img/kaiteki-64x.png">
+            <span>Kaiteki</span>
+        </a>
+        <ul>
+            <li><a href="/projects/kaiteki/posts/">Posts</a></li>
+            <li><a href="/projects/kaiteki/compatibility/">Compatibility</a></li>
+            <li><a href="/projects/kaiteki/contribute/">Contribute</a></li>
+            <li><a href="/projects/kaiteki/help">Help</a></li>
+        </ul>
+    </div>
+</nav>
+  
+  <main class="centered">
+    
+    <p class="post-meta">
+    
+    
+
+
+<img src="https://www.libravatar.org/avatar/3052c9be1eb8f9f5f770ffa9c8ea5d21bdc9bd8193f15cd63d06dd1702fe385d?s=64" class="author-image" alt="">
+
+<span class="author-name">Craftplacer</span>
+<span>&bullet;</span>
+
+<span>Published on 17-10-2021</span>
+</p>
+<article>
+    <h1>Login experience overhaul</h1>
+    <p>With commit <a href="https://github.com/Craftplacer/Kaiteki/commit/29656d1a9c95076acce269610ac71be8ff23cd88"><code class="language-plaintext highlighter-rouge">29656d1</code></a> the entire login screen was revamped.</p>
+
+<video controls="" muted="">
+    <source src="/projects/kaiteki/vid/30EEC26950A328CA.mp4" type="video/mp4" />
+    <source src="/projects/kaiteki/vid/3167C3AB3499549B.webm" type="video/webm" />
+</video>
+
+<h2 id="new-features">New features</h2>
+
+<ul>
+  <li><strong>Instance probing:</strong> No need for knowing what software your instance runs on. Kaiteki will send out requests to known endpoints and will check what kind of instance you have.</li>
+  <li><strong>Animations.</strong> (some of them are borked)</li>
+  <li><strong>List of “suggested” instances</strong> for Fediverse newcomers, alongside a short description of most instances alongside their rules. (available here)</li>
+  <li>Instance logo and background are visible at the login screen</li>
+  <li><em>Lots of necessary internal changes</em></li>
+</ul>
+
+<h2 id="recent-changes-since-first-announcement">Recent changes since first announcement</h2>
+
+<ul>
+  <li>First implementation of keyboard shortcuts, more coming soon</li>
+  <li>About screen design changes (now shows Kaiteki’s colorful logo)</li>
+  <li>Tooltips on post scope and time (should also aid in screen readers)</li>
+  <li>Post time is displayed properly now (If conditions were messed up)</li>
+</ul>
+
+<p>You can try these changes now at: <a href="https://kaiteki.craftplacer.moe/">kaiteki.craftplacer.moe</a></p>
+
+</article>
+  </main>
+  
+  <footer>
+    <span class="left">Made with &lt;3 by <a href="https://craftplacer.moe">Craftplacer</a> and <a href="https://github.com/Kaiteki-Fedi/Kaiteki/graphs/contributors">contributors</a></span>
+    <span class="right"><a href="https://github.com/Kaiteki-Fedi/Kaiteki/">GitHub</a> • <a href="https://t.me/kaiteki_fedi">Telegram</a> • <a rel="me" href="https://floss.social/@Kaiteki">Fediverse</a></span>
+</footer>
+</body>
+
+</html>

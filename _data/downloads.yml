@@ -1,0 +1,7 @@
+windows:
+  bin: https://github.com/Kaiteki-Fedi/Kaiteki/releases/download/latest/windows.zip
+linux:
+  bin: https://github.com/Kaiteki-Fedi/Kaiteki/releases/download/latest/linux.zip
+  appimage: https://github.com/Kaiteki-Fedi/Kaiteki/releases/download/latest/Kaiteki-x86_64.AppImage
+android:
+  apk: https://github.com/Kaiteki-Fedi/Kaiteki/releases/download/app-release.apk

@@ -1,0 +1,528 @@
+---
+---
+
+$body-font: "Roboto", Arial, Helvetica, sans-serif;
+$brand-font: "Quicksand", $body-font;
+$heading-font: $brand-font;
+$monospace-font: "Roboto Mono", "Lucide Console", "Consolas", monospace;
+$rounding: 8px;
+$page-width: 800px;
+$page-margin: 24px;
+$navigation-link-spacing: 1em;
+$page-breakpoint: $page-width + ($page-margin * 2);
+
+:root {
+    --disabled-text: rgba(255, 255, 255, 0.5);
+
+    --background: #FFFBFF;
+    --on-background: #201A1B;
+    --primary: #A7354E;
+    --on-primary: #FFF;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #201A1B;
+        --on-background: #ECE0E0;
+        --primary: #FFB2BC;
+        --on-primary: #670022;
+    }
+    
+}
+
+#kaiteki-logo {
+    font-family: $brand-font;
+    font-weight: 700;
+    color: var(--on-background);
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 32px;
+        height: 32px;
+        margin-right: 4px;
+    }
+}
+
+html {
+    font-family: $body-font;
+    background: var(--background);
+    color: var(--on-background);
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: $heading-font;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 8pt 6pt;
+    border: 1px solid var(--disabled-text);
+}
+
+hr {
+    border-bottom: none;
+}
+
+ol li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+figcaption {
+    color: var(--disabled-text);
+    font-size: 85%;
+    text-align: center;
+}
+
+@mixin support($color, $codepoint, $dark) {
+    @if $color {
+        @if $dark {
+            color: lighten($color, 10%);
+
+            a {
+                color: lighten($color, 20%);
+                font-style: italic;
+            }
+        }
+
+        @else {
+            color: darken($color, 10%);
+
+            a {
+                color: darken($color, 20%);
+                font-style: italic;
+            }
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        background-color: transparentize($color: $color, $amount: 0.85);
+    }
+
+    font-weight: 400;
+
+    &:before {
+        font-family: "Material Design Icons";
+        content: $codepoint;
+        margin-right: 4pt;
+        font-size: 1.125em;
+    }
+
+    @media (max-width: 700px) {
+        font-size: 0;
+
+        &:before {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .th-dv {
+        // transform: rotate(90deg);
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .post-list .post {
+        flex-direction: column;
+
+        .cover {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+    }
+
+    #kaiteki-logo {
+        margin-bottom: 8px;
+    }
+
+    .navigation-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul {
+        display: flex;
+
+        a {
+            margin-right: $navigation-link-spacing;
+        }
+    }
+}
+
+@media (min-width: 701px) {
+    .post-list .post .cover {
+        margin-right: 12px;
+        height: 150px;
+        aspect-ratio: 16 / 9;
+    }
+
+    .two-columns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .three-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    nav ul {
+        display: inline-flex;
+        margin-left: auto;
+
+        a {
+            margin-left: $navigation-link-spacing;
+            padding: 8px 0;
+        }
+    }
+}
+
+@media screen and (max-width: ($page-breakpoint + 1)) {
+    .navigation-container {
+        margin: 0 $page-margin;
+    }
+}
+
+@media screen and (min-width: $page-breakpoint) {
+    .navigation-container {
+        margin: 0 auto;
+    }
+}
+
+.support {
+    .y {
+        @include support(#b9f6ca, "\F0E1E", true);
+    }
+
+    .n {
+        @include support(#ff8a80, "\F1398", true);
+    }
+
+    .na {
+        @include support(#cfd8dc, "\F0FDF", true);
+    }
+
+    .i {
+        @include support(#ea80fc, "\F0855", true);
+    }
+
+    .p {
+        @include support(#ffd180, "\F01D8", true);
+    }
+
+    a {
+        color: lighten(#ff7890, 10%);
+    }
+}
+
+nav {
+    padding: 8px 0;
+
+    ul {
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding: 12px 0;
+    }
+
+    li {
+        display: block;
+
+        a {
+            color: var(--disabled-text);
+            padding: 12px 0;
+        }
+    }
+}
+
+.post-meta {
+    @extend .secondary-text;
+
+    .author-image {
+        vertical-align: middle;
+        position: relative;
+        top: -0.05em;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+    }
+}
+
+section:target {
+    animation-name: targetHint;
+    animation-duration: 3s;
+    background-color: transparentize(darken(#f7f9ff, 3.5), 0.5);
+    border-radius: $rounding;
+}
+
+article {
+    video {
+        width: 100%;
+        border-radius: $rounding;
+    }
+
+    p > img:nth-child(1) {
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: $rounding;
+        display: block;
+    }
+
+    li {
+        margin: 1em 0px;
+    }
+}
+
+.secondary-text {
+    color: var(--disabled-text);
+}
+
+.post-list {
+    .post {
+        margin: 24px 0;
+        display: flex;
+
+        .cover {
+            border-radius: $rounding;
+            object-fit: cover;
+            background-color: #dee0f8;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+    }
+}
+
+@keyframes targetHint {
+    0% {
+        background-color: darken(#f7f9ff, 3.5);
+    }
+
+    75% {
+        background-color: transparentize(darken(#f7f9ff, 3.5), 0.5);
+    }
+}
+
+.navigation-container {
+    max-width: $page-width;
+    text-align: center;
+    display: flex;
+}
+
+.navigation-sidebar {
+    width: 200px;
+    grid-column: 2 / 3;
+    border-right: rgba(0, 0, 0, 0.25) 1px solid;
+}
+
+#featured-screenshot {
+    max-height: 400px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
+}
+
+.container-sidebar {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 12px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+}
+
+.navigation-sidebar-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.55;
+    margin-left: 8px;
+}
+
+.navigation-sidebar li {
+    padding: 8px 12px;
+    border-radius: 24px;
+    margin-right: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &.selected {
+        background: transparentize($color: #ff7890, $amount: 0.5);
+    }
+
+    &:hover {
+        background: transparentize($color: #ff7890, $amount: 0.85);
+    }
+}
+
+.navigation-sidebar a {
+    color: inherit;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+    grid-auto-rows: minmax(100px, auto);
+
+    padding: 0;
+
+    & > li {
+        list-style: none;
+        display: block;
+    }
+
+    & > * {
+        background: white;
+        padding: 16px;
+        border-radius: 12px;
+        border: rgba(0, 0, 0, 0.5) 1px solid;
+    }
+}
+
+.card-title {
+    font-family: $heading-font;
+    line-height: 32px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+@media (prefers-color-scheme: light) {
+    #kaiteki-logo {
+        color: black;
+    }
+
+    :root {
+        --disabled-text: rgba(0, 0, 0, 0.5);
+    }
+
+    a {
+        color: #9a3052;
+    }
+
+    .support {
+        .y {
+            @include support(#00c853, "\F0E1E", false);
+        }
+
+        .n {
+            @include support(#d50000, "\F1398", false);
+        }
+
+        .na {
+            @include support(#455a64, "\F0FDF", false);
+        }
+
+        .p {
+            @include support(#ff6d00, "\F01D8", false);
+        }
+
+        .i {
+            @include support(#aa00ff, "\F0855", false);
+        }
+
+        a {
+            color: darken(#ff7890, 10%);
+        }
+    }
+}
+
+.centered {
+    max-width: $page-width;
+    margin: 12px auto;
+    padding: $page-margin;
+}
+
+.alpha-badge {
+    // colors
+    background: var(--primary);
+    color: var(--on-primary);
+
+    // text appearance
+    font-weight: bold;
+    font-size: 80%;
+    text-transform: uppercase;
+
+    border-radius: 24px;
+    padding: 0 12px;
+
+    // align properly
+    position: relative;
+    top: -2pt;
+}
+
+@media screen and (min-width: 576px) {
+    .columns {
+        // grid-auto-columns: minmax(0, 1fr);
+        grid-auto-flow: column;
+        display: grid;
+    }
+
+    .columns-center {
+        @extend .columns;
+        text-align: center;
+    }
+
+    .image-container {
+        margin-left: 24px;
+    }
+}
+
+.primary-section {
+    // height: 100vh;
+    text-align: center;
+}
+
+.download-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--disabled-text);
+    font-size: 90%;
+}
+
+footer {
+    @extend .centered;
+    font-family: $monospace-font;
+
+    .right {
+        float: right;
+    }
+}
+
+.home-support-img {
+    top: 2pt;
+    position: relative;
+}
