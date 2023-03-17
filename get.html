@@ -1,0 +1,44 @@
+---
+layout: default
+title: Get Kaiteki
+include-title: true
+---
+
+<div id="platforms">
+    <a href="https://web.kaiteki.app">{% include svg/pwa.svg %} <span>Web</span></a>
+    <a href="{% link get/android.html %}">{% include svg/android.svg %} <span>Android</span></a>
+    <a href="{% link get/windows.html %}">{% include svg/windows11.svg %} <span>Windows</span></a>
+    <a href="{% link get/linux.html %}">{% include svg/linux.svg %} <span>Linux</span></a>
+</div>
+
+<h2>About support for Apple platforms</h2>
+<p>Developing for Apple platforms is a very difficult and costly undertaking. Please refer to the following linked issues for the current status of Apple support:</p>
+<ul>
+    <li><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/177">(#177) iOS & iPadOS</a></li>
+    <li>(Not yet created) macOS</li>
+</ul>
+
+<style>
+    #platforms {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    #platforms>* {
+        background-color: var(--surface-variant);
+        border-radius: 8px;
+        padding: 12px;
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #platforms svg {
+        fill: currentColor;
+        width: 48px;
+        height: 48px;
+    }
+</style>

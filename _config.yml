@@ -1,6 +1,5 @@
 title: Kaiteki
 description: "The comfy SNS client for everything, everywhere."
-baseurl: "/projects/kaiteki"
 # paginate: 10
 permalink: /posts/:categories/:year/:month/:day/:title/
 plugins: [jekyll-feed]

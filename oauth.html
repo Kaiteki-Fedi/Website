@@ -1,0 +1,36 @@
+---
+layout: default
+title: OAuth
+include-title: true
+---
+<p>Copy the text below and paste it into Kaiteki to finish authentication.</p>
+
+<p><button onclick="copy()" class="button">Copy</button></p>
+
+<textarea id="data" readonly>...</textarea>
+
+<style>
+    #data {
+        all: unset;
+        padding: 16px;
+        font-family: monospace;
+        outline: var(--outline) 1px solid;
+        border-radius: 4px;
+        width: 100%;
+        min-height: 56px;
+        display: block;
+    }
+</style>
+<script>
+    function getText() {
+        return btoa(JSON.stringify(Object.fromEntries(new URL(window.location.href).searchParams.entries())));
+    }
+
+    window.onload = function () {
+        document.getElementById("data").innerText = getText();
+    }
+
+    function copy() {
+        navigator.clipboard.writeText(getText());
+    }
+</script>
