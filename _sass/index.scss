@@ -1,0 +1,43 @@
+#home-header {
+    text-align: center;
+    min-height: calc(100vh - #{$nav-height} - 32px);
+    display: flex;
+    flex-direction: column;
+
+    &>div:nth-of-type(1) {
+
+        @media (max-width: $page-breakpoint) {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &>div:nth-of-type(2) {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#features {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    h2 {
+        text-align: center;
+    }
+
+    h3 {
+        margin-top: 0;
+    }
+
+    hr {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

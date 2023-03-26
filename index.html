@@ -4,69 +4,62 @@ manual-layout: true
 uses-icons: true
 ---
 
-<section class="centered primary-section">
-    <h1>
-        Kaiteki <span class="alpha-badge">Alpha</span>
-    </h1>
-    <p>{{site.description}}</p>
-    <p>
-        <a class="button--icon" href="{% link get.html %}">
-            <span class="material-symbols-rounded">download</span> Download
-        </a>
-    </p>
+<section class="page-margin" id="home-header">
+	<div>
+		<h1>Kaiteki <span class="alpha-badge">Alpha</span></h1>
+		<p>{{ site.description }}</p>
+		<p><a class="button--icon" href="{% link get.html %}"><span class="material-symbols-rounded">download</span> Download</a></p>
+	</div>
+	<div>
+		<picture>
+			<source media="(max-width: 599px)" srcset="{% link img/screenshots/main-screen-portrait.png %}" />
+			<source media="(min-width: 600px)" srcset="{% link img/screenshots/main-screen-landscape.png %}" />
+			<img src="{% link img/screenshots/main-screen-landscape.png%}" alt="Screenshot of the main screen" id="featured-screenshot" />
+		</picture>
+	</div>
 </section>
 
-<section class="centered">
-    <img src="{% link img/screenshots/main-screen.png%}" id="featured-screenshot" alt="Screenshot of the main screen" style="background:#f2f4ff">
+<hr>
+
+<section id="features">
+	<h2>Why Kaiteki?</h2>
+	<div class="two-columns page-margin">
+		<div>
+			<img src="{% link img/inclusivity.png %}" alt="Big heart surrounded by icons of operating systems, social media sites, accessibility and the globe." width="100%">
+		</div>
+		<div>
+			<h3>One client for everyone, everything, and everywhere</h3>
+			<p>Kaiteki has support for<b>4</b> platforms, <b>4<sup>*</sup></b>services and <b>over 10</b>languages.</p>
+			<p>No matter who you are, Kaiteki is the right client for you.</p>
+			<p><small>* Mastodon, Pleroma, Misskey and Twitter. More services are indirectly supported by shared APIs. See the <a href="https://github.com/orgs/Kaiteki-Fedi/projects/2/views/7">backend support board</a> for more details.</small></p>
+		</div>
+	</div>
+	<div class="two-columns page-margin">
+		<div>
+			<img src="{% link img/kaiteki-blueprint.png %}" alt="Image showing Kaiteki's interface in a blueprint style" width="100%">
+		</div>
+		<div>
+			<h3>Delightful user interface</h3>
+			<p>Kaiteki ships a beautiful theme that's clean, accessible and soft.</p>
+			<p>It uses the <a href="https://m3.material.io/">Material Design</a> guidelines to provide a consistent and intuitive experience.</p>
+		</div>
+	</div>
+	<div class="two-columns page-margin">
+		<div>
+			<div class="code-card">{% highlight dart %}{% include main.dart %}{% endhighlight %}</div>
+		</div>
+		<div>
+			<h3>Built independently from the ground up and open source from the very beginning</h3>
+			<p>100% free and open source &emdash; Kaiteki is not backed by anyone but the developers making it.</p>
+			<p><a href="https://github.com/Kaiteki-Fedi/Kaiteki">Peek inside</a></p>
+		</div>
+	</div>
 </section>
 
-<section class="centered">
-    <div class="two-columns">
-        <div>
-            <h2>Supports everything</h2>
-            <p>Kaiteki supports the most common Fediverse platforms alongside other social media. Kaiteki can be used on
-                any device.</p>
-            <div>
-                <img class="home-support-img" src="{% link img/mastodon.png %}" width="20" height="20"
-                    alt="Mastodon" />
-                <img class="home-support-img" src="{% link img/pleroma.png %}" width="20" height="20" alt="Pleroma" />
-                <img class="home-support-img" src="{% link img/misskey.png %}" width="20" height="20" alt="Misskey" />
-                <img class="home-support-img" src="{% link img/twitter.png %}" width="20" height="20" alt="Twitter" />
-            </div>
-        </div>
-        <div>
-            <h2>Delightful user interface</h2>
-            <p>Kaiteki ships a colorful and soft theme.</p>
-        </div>
-    </div>
-</section>
+<hr>
 
-<section class="centered primary-section">
-    <h2>We need your help!</h2>
-    <p>Anyone from application design expierence to translators are needed.</p>
-    <p>Check out the <a href="{% link contribute.html %}">contribution page</a> for find out on how you can help.</p>
+<section class="page-margin text-center">
+	<h2>We need your help!</h2>
+	<p>Anyone from application design expierence to translators are needed.</p>
+	<p>Check out the <a href="{% link contribute.html %}">contribution page</a> for find out on how you can help.</p>
 </section>
-
-<!--
-    <section class="centered" id="downloads">
-        <h2 style="text-align:center">Downloads</h2>
-        <div class="columns-center">
-            <div class="column">
-                <h3><span class="mdi mdi-microsoft-windows"></span> Windows</h3>
-                <p><a href="{{site.data.downloads.windows.bin}}">Binaries</a></p>
-                <p><s><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/63">Installer</a></s></p>
-                <p><s><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/63">AppX (Windows 10+)</a></s></p>
-            </div>
-            <div class="column">
-                <h3><span class="mdi mdi-linux"></span> Linux</h3>
-                <p><a href="{{site.data.downloads.linux.bin}}">Binaries</a></p>
-                <p><a href="{{site.data.downloads.linux.appimage}}">AppImage</a></p>
-                <p><s><a href="https://github.com/Kaiteki-Fedi/Kaiteki/issues/62">Others</a></s></p>
-            </div>
-            <div class="column">
-                <h3><span class="mdi mdi-android"></span> Android</h3>
-                <p><a href="{{site.data.downloads.android.apk}}">APK</a></p>
-            </div>
-        </div>
-    </section>
--->

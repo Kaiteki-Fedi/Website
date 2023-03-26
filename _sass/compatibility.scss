@@ -1,0 +1,98 @@
+@mixin support($color, $codepoint, $dark) {
+    @if $color {
+        @if $dark {
+            color: lighten($color, 10%);
+
+            a {
+                color: lighten($color, 20%);
+                font-style: italic;
+            }
+        }
+
+        @else {
+            color: darken($color, 10%);
+
+            a {
+                color: darken($color, 20%);
+                font-style: italic;
+            }
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        background-color: transparentize($color: $color, $amount: 0.85);
+    }
+
+    font-weight: 400;
+
+    &:before {
+        font-family: "Material Design Icons";
+        content: $codepoint;
+        margin-right: 4pt;
+        font-size: 1.125em;
+    }
+
+    @media (max-width: $page-breakpoint) {
+        font-size: 0;
+
+        &:before {
+            font-size: 1.5rem;
+        }
+    }
+}
+.support {
+    .y {
+        @include support(#b9f6ca, "\F0E1E", true);
+    }
+
+    .n {
+        @include support(#ff8a80, "\F1398", true);
+    }
+
+    .na {
+        @include support(#cfd8dc, "\F0FDF", true);
+    }
+
+    .i {
+        @include support(#ea80fc, "\F0855", true);
+    }
+
+    .p {
+        @include support(#ffd180, "\F01D8", true);
+    }
+
+    a {
+        color: lighten(#ff7890, 10%);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+
+    .support {
+        .y {
+            @include support(#00c853, "\F0E1E", false);
+        }
+
+        .n {
+            @include support(#d50000, "\F1398", false);
+        }
+
+        .na {
+            @include support(#455a64, "\F0FDF", false);
+        }
+
+        .p {
+            @include support(#ff6d00, "\F01D8", false);
+        }
+
+        .i {
+            @include support(#aa00ff, "\F0855", false);
+        }
+
+        a {
+            color: darken(#ff7890, 10%);
+        }
+    }
+}

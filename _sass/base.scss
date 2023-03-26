@@ -1,0 +1,101 @@
+#kaiteki-logo {
+    font-family: $brand-font;
+    font-weight: 700;
+    color: var(--on-background);
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 32px;
+        height: 32px;
+        margin-right: 4px;
+    }
+}
+
+html {
+    font-family: $body-font;
+    background: var(--background);
+    color: var(--on-background);
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 32px;
+}
+
+h1 {
+    font-family: $heading-font;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 8pt 6pt;
+    border: 1px solid var(--outline);
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid var(--surface-variant);
+    margin-top: 32px; 
+    margin-bottom: 32px; 
+}
+
+ol li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+figcaption {
+    color: var(--outline);
+    font-size: 85%;
+    text-align: center;
+}
+
+nav {
+    @extend .page-margin;
+
+    min-height: $nav-height;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    ul {
+        display: flex;
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding: 12px 0;
+        gap: $navigation-link-spacing;
+    }
+
+    li {
+        display: block;
+
+        a {
+            padding: 12px 0;
+        }
+    }
+}
+
+.secondary-text {
+    color: var(--outline);
+}

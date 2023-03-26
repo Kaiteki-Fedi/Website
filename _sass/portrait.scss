@@ -1,0 +1,24 @@
+
+@media (max-width: $page-breakpoint) {
+    .th-dv {
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .two-columns, .three-columns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation-sidebar {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+
+        &:not(:last-child) {
+            margin-bottom: unset;
+        }
+    }
+}
