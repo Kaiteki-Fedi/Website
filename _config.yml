@@ -1,8 +1,14 @@
 title: Kaiteki
 description: "The comfy SNS client for everything, everywhere."
-# paginate: 10
 permalink: /posts/:categories/:year/:month/:day/:title/
 plugins: [jekyll-feed]
+links:
+  fediverse: https://fedi.software/@Kaiteki
+  telegram: kaiteki_fedi
+  matrix: '#kaiteki:fedibird.com'
+  git: https://github.com/Kaiteki-Fedi/Kaiteki/
+  weblate: https://hosted.weblate.org/projects/kaiteki/
+
 sass:
   style: compressed
 exclude: [README.md, LICENSE]
