@@ -5,10 +5,25 @@ include-title: true
 ---
 
 <div id="platforms">
-    <a href="https://web.kaiteki.app">{% include svg/pwa.svg %} <span>Web</span></a>
-    <a href="{% link get/android.html %}">{% include svg/android.svg %} <span>Android</span></a>
-    <a href="{% link get/windows.html %}">{% include svg/windows11.svg %} <span>Windows</span></a>
-    <a href="{% link get/linux.html %}">{% include svg/linux.svg %} <span>Linux</span></a>
+    <section>
+        <h2>Smart-fridges</h2>
+        <div>
+            <a href="https://web.kaiteki.app">{% include svg/pwa.svg %} <span>Web</span></a>
+        </div>
+    </section>
+    <section>
+        <h2>Desktop</h2>
+        <div>
+            <a href="{% link get/windows.html %}">{% include svg/windows11.svg %} <span>Windows</span></a>
+            <a href="{% link get/linux.html %}">{% include svg/linux.svg %} <span>Linux</span></a>
+        </div>
+    </section>
+    <section>
+        <h2>Mobile</h2>
+        <div>
+            <a href="{% link get/android.html %}">{% include svg/android.svg %} <span>Android</span></a>
+        </div>
+    </section>
 </div>
 
 <h2>About support for Apple platforms</h2>
@@ -20,13 +35,21 @@ include-title: true
 
 <style>
     #platforms {
-        display: grid;
-        gap: 8px;
-        grid-template-columns: repeat(2, 1fr);
-
+        display: flex;
+        gap: 16px;
     }
 
-    #platforms>* {
+    #platforms > section {
+        flex: 1;
+    }
+
+    #platforms > section > * {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #platforms a {
         background-color: var(--surface-variant);
         color: var(--on-surface-variant);
         border-radius: 8px;
