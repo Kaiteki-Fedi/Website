@@ -20,7 +20,16 @@ defaults:
       type: "help"
     values:
       layout: "help"
+  -
+    scope:
+      path: ""
+      type: "compatibility"
+    values:
+      layout: "backend-compatibility"
 
 collections:
   help:
     output: true
+  compatibility:
+    output: true
+

@@ -2,17 +2,25 @@
 title: Branches & flavors
 ---
 
-Kaiteki is compiled by hand or compiled automatically, and potentially distributed to a store. Kaiteki can also be built with or without proprietary code. This page will explain the different flavors Kaiteki has.
+Kaiteki is compiled by hand or automatically and possibly distributed to a
+store. Kaiteki can also be built with or without proprietary code. This page
+explains Kaiteki's different flavors.
 
 ## Stable vs. Nightly
 
-Stable builds are made in weekly increments in order to ensure quality and stability. Nightly builds are produced on every code change made by the developers in order to provide feature previews and to find issues early.
+Stable builds are made in weekly increments in order to ensure quality and
+stability. Nightly builds are produced on every code change made by the
+developers in order to provide feature previews and to find issues early.
 
 ## FOSS vs. Store
 
-Kaiteki will be distributed to different software marketplaces such as Google Play, App Store or the Microsoft Store. Kaiteki's "store flavor" will contain support for proprietary services like [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) (push notifications powered by <abbr title="Google Mobile Services">GMS</abbr>) or Tenor.
+Kaiteki will be distributed to different software marketplaces such as Google
+Play, App Store or the Microsoft Store. Kaiteki's "store flavor" will contain
+support for proprietary services like [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) (push notifications powered by <abbr title="Google Mobile Services">GMS</abbr>)
+or Tenor.
 
-Kaiteki's FOSS version has no support for these services and provides alternatives such as [UnifiedPush](https://unifiedpush.org/).
+Kaiteki's FOSS version has no support for these services and provides
+alternatives such as [UnifiedPush](https://unifiedpush.org/).
 
 ## Signed vs. Unsigned
 

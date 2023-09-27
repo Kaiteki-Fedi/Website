@@ -47,6 +47,7 @@ $nav-height: 52px;
 @import "compatibility";
 @import "download";
 @import "index";
+@import "backends";
 
 .two-columns {
     grid-template-columns: repeat(2, 1fr);
@@ -140,6 +141,39 @@ $nav-height: 52px;
     }
 }
 
+.backend-support-card {
+    border-radius: 12px;
+    border: 1px solid var(--outline-variant);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .progress {
+        height: 8px;
+        border-radius: 8px;
+        border: 1px solid var(--outline-variant);
+        margin-top: auto;
+
+        &>*:nth-child(1) {
+            background: #B08A5E;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        &>*:nth-child(2) {
+            background: #CCA476;
+        }
+
+        &>*:nth-child(3) {
+            background: #EABF8F;
+        }
+
+        &>*:nth-child(4) {
+            background: #FFDDB8;
+        }
+    }
+}
 .card-title {
     font-family: $heading-font;
     line-height: 32px;
@@ -179,17 +213,23 @@ body > * {
     font-size: 90%;
 }
 
-// "vertical list"
-.vl {
+.vl,
+.hl {
     all: unset;
     display: flex;
-    flex-direction: column;
 
     li {
         all: unset;
     }
 }
 
+.hl {
+    flex-direction: row;
+}
+
+.vl {
+    flex-direction: column;
+}
 .code-card {
     margin: 0 16px;
     aspect-ratio: 16/9;
@@ -270,7 +310,7 @@ footer {
             margin-bottom: 8px;display: block;
         }
     }
-    
+
     & > *:first-child {
         flex-grow: 2;
     }
@@ -297,7 +337,7 @@ footer {
         @extend .button;
 
         padding-left: 16px;
-        
+
         .material-symbols-rounded {
             margin-right: 8px;
             width: 24px;

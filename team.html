@@ -1,0 +1,87 @@
+---
+title: Team
+layout: default
+members:
+- name: Crafti
+  role: Maintainer
+  link: https://github.com/Craftplacer
+  avatar: https://www.libravatar.org/avatar/1abcda3eed224fdb139eb8a1cbbf5fe017522b8016b4ed5344f7a094de35ad4a?s=96
+- name: Via
+  avatar: https://kitties.gay/images/pfpnew.jpg
+  link: https://kitties.gay/
+  role: UI/UX
+notable:
+- name: Octus
+  avatar: https://media.mstdn.social/accounts/avatars/000/062/077/original/199b3ced9e1c0d5e.png
+  description: Logo Design
+  link: https://mstdn.social/@odyssey98
+- name: Erin
+  avatar: https://avatars.githubusercontent.com/u/542684
+  description: Contributions to Glitch Social support
+  link: https://github.com/erincandescent
+- name: Ame
+  avatar: https://avatars.githubusercontent.com/u/85121274
+  description: Feedback backend and several other contributions
+  link: https://github.com/ajiiisai
+---
+
+<h1>Team</h1>
+
+<div class="grid">
+    {% for member in page.members %}
+    <div class="h-card">
+        <img class="u-photo" src="{{member.avatar}}" alt="">
+        {% if member.link %}
+        <a class="p-name u-url" href="{{member.link}}">{{member.name}}</a>
+        {% else %}
+        <span class="p-name">{{member.name}}</span>
+        {% endif %}
+        <span class="p-job-title">{{member.role}}</span>
+    </div>
+    {% endfor %}
+</div>
+
+<h2>Notable mentions</h2>
+
+<div class="grid">
+    {% for member in page.notable %}
+    <div class="h-card">
+        <img class="u-photo" src="{{member.avatar}}" alt="">
+        {% if member.link %}
+        <a class="p-name u-url" href="{{member.link}}">{{member.name}}</a>
+        {% else %}
+        <span class="p-name">{{member.name}}</span>
+        {% endif %}
+        {% if member.description %}
+        <span>{{member.description}}</span>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+<hr>
+
+<p>We also thank <a href="https://github.com/Kaiteki-Fedi/Kaiteki/graphs/contributors">everyone else contributing</a> to the project.</p>
+
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 16px;
+        text-align:center;
+    }
+    .h-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    .h-card .p-name {
+        font-weight: bold;
+    }
+    .h-card img {
+        width: 96px;
+        height: 96px;
+        border-radius: 100%;
+    }
+</style>

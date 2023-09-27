@@ -1,0 +1,32 @@
+.backend-page-heading {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2em;
+
+    img, svg { height: 1em; }
+
+    .misskey-logo {
+        svg { fill: var(--on-background);
+        }
+    }
+
+    .mastodon-logo {
+        padding-top: 0.6em;
+        position: relative;
+
+        img { height: 1.5em; }
+    }
+
+    .misskey-logo {
+        padding-top: 0.5em;
+        position: relative;
+
+        svg { height: 1em; }
+    }
+    .amp {
+        margin: 0 0.5em;
+        font-weight: 100;
+    }
+}

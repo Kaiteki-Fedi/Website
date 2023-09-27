@@ -1,6 +1,4 @@
 #kaiteki-logo {
-    font-family: $brand-font;
-    font-weight: 700;
     color: var(--on-background);
     display: flex;
     align-items: center;
@@ -10,6 +8,11 @@
         height: 32px;
         margin-right: 4px;
     }
+}
+
+#kaiteki-logo, .wordmark {
+    font-family: $brand-font;
+    font-weight: 700;
 }
 
 html {

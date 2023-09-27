@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<h1>{{page.title}}</h1>
+
+<h2>Done</h2>
+
+<p>These features are fully implemented:</p>
+
+<ul>
+    {% for item in page.progress.done %}
+    <li>{{item}}</li>
+    {% endfor %}
+</ul>
+
+<h2>Working</h2>
+
+<p>These features are working but not completely finished:</p>
+
+<ul>
+    {% for item in page.progress.working %}
+    <li>{{item}}</li>
+    {% endfor %}
+</ul>
+
+<h2>Work in progress</h2>
+
+<p>These features are being worked on:</p>
+
+<ul>
+    {% for item in page.progress.wip %}
+    <li>{{item}}</li>
+    {% endfor %}
+</ul>
+
+<h2>Unimplemented</h2>
+
+<p>These features are not implemented yet:</p>
+
+<ul>
+    {% for item in page.progress.unimplemented %}
+    <li>{{item}}</li>
+    {% endfor %}
+</ul>
+
+<h2>Unsupported</h2>
+
+<p>These features are not supported by Kaiteki itself:</p>
+
+<ul>
+    {% for item in page.progress.unsupported %}
+    <li>{{item}}</li>
+    {% endfor %}
+</ul>
