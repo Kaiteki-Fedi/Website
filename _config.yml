@@ -12,6 +12,7 @@ links:
 sass:
   style: compressed
 exclude: [README.md, LICENSE]
+include: [".well-known"]
 
 defaults:
   -
